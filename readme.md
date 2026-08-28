@@ -30,7 +30,7 @@ By utilizing exact coordinate mapping and anchor-keyword searching rather than u
 2. **Retrieve Image:** It polls the printer's job URL, waits for the scan head to finish, and downloads the resulting document (PDF/JPG) to a designated local output folder.
 3. **Continuous Batch Scanning:** For multiple pages, the script provides a 30-second countdown allowing the user to change the physical paper. It automatically triggers the next scan when the timer expires, or the user can press the `c` key to skip the timer and scan immediately.
 
-### Part 2: Data Extraction (`ocr/`)
+### Part 2: Data Extraction (`data_extract/`)
 1. **Input Selection:** The user is prompted via a native Windows GUI (`tkinter`) to select a target folder containing the scanned PDF receipts.
 2. **Text Parsing:** The script iterates through the PDFs. Depending on the bank format:
    * **Static Layouts (e.g., KBank):** Crops specific `(x0, top, x1, bottom)` bounding boxes.

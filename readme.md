@@ -23,24 +23,6 @@ By utilizing exact coordinate mapping and anchor-keyword searching rather than u
 * **Data Structuring:** `pandas`, `openpyxl` (DataFrames and Excel export)
 * **UI:** `tkinter` (Native file dialogs)
 
-## 📁 Project Structure
-
-├── config_template.py       # Template for local settings (IPs and folder paths)
-├── requirements.txt         # Python dependencies
-├── .gitignore               # Ignores sensitive scanned files and local config.py
-│
-├── scan/                    
-│   └── hp_scan.py           # eSCL API interaction to trigger network scans
-│
-├── ocr/                     
-│   ├── ocr_bay.py           # Anchor-keyword extraction logic for Bank of Ayudhya
-│   ├── ocr_kbank.py         # Coordinate-based extraction logic for Kasikornbank
-│   └── ocr_ktc.py           # Hybrid (Coordinate & Keyword) logic for KTC
-│
-└── utils/                   
-    └── pdf_pinpoint.py      # Custom utility to extract text coordinates 
-
-
 ## 🧠 How It Works
 
 ### Part 1: Network Scanning (`hp_scan.py`)

@@ -7,7 +7,7 @@ It consists of two main components:
 1. **Network Scanner API Integration:** A script that bypasses standard manufacturer software to trigger scans programmatically over the local network using the HP eSCL API.
 2. **Deterministic Data Extractor:** A rules-based OCR pipeline that batch-processes bank receipts (such as BAY, KBank, and KTC), extracting embedded text and structuring it into clean Excel reports.
 
-By utilizing exact coordinate mapping and anchor-keyword searching rather than unpredictable AI, this tool ensures 100% extraction accuracy, making it highly reliable for strict financial data workflows.
+By utilizing exact coordinate mapping and anchor-keyword searching rather than unpredictable AI, this tool ensures highly accurate extraction accuracy, making it highly reliable for strict financial data workflows.
 
 ## 🚀 Key Features
 * **Automated Network Scanning:** Uses Python to send XML configuration payloads to an HP printer's IP, triggering hardware scans and downloading the files directly via HTTP requests.
@@ -25,7 +25,7 @@ By utilizing exact coordinate mapping and anchor-keyword searching rather than u
 
 ## 🧠 How It Works
 
-### Part 1: Network Scanning (`hp_scan.py`)
+### Part 1: Network Scanning (`Scan\hp_scan.py`)
 1. **Trigger Scan:** The script reads the printer IP from `config.py` and sends an XML payload via a POST request to the printer's `/eSCL/ScanJobs` endpoint.
 2. **Retrieve Image:** It polls the printer's job URL, waits for the scan head to finish, and downloads the resulting document (PDF/JPG) to a designated local output folder.
 3. **Continuous Batch Scanning:** For multiple pages, the script provides a 30-second countdown allowing the user to change the physical paper. It automatically triggers the next scan when the timer expires, or the user can press the `c` key to skip the timer and scan immediately.
@@ -41,6 +41,6 @@ By utilizing exact coordinate mapping and anchor-keyword searching rather than u
 1. Clone the repository.
 2. Install dependencies: `pip install -r requirements.txt`
 3. Rename `config_template.py` to `config.py` and input your local HP scanner's IP address and preferred default folders.
-4. Run `hp_scan.py` to scan documents, or run any script in the `ocr/` folder to process existing PDFs.
+4. Run `hp_scan.py` to scan documents, or run any script in the `Data Extract/` folder to process existing PDFs.
 
 *Note: All code provided is sanitized. No actual financial records or sensitive company data are included in this repository.*
